@@ -21,3 +21,14 @@ tx_matrix = repmat(tx,8,1);
 tx_column = reshape(tx_matrix,800,1);
 ensemble_NRZ(i, :) = tx_column;
 end
+%% ---------------------------RETURN TO ZERO-------------------------------
+ensemble_RZ = zeros(500,800);
+for i = 1:500
+    data = randi([0,1],1,n);
+    tx = ((2 * data) - 1) * a;
+    first_half = repmat(tx, 4, 1);
+    second_half = zeros(4, n);
+    tx_matrix = [first_half ; second_half];
+    tx_column = reshape(tx_matrix, 800, 1);
+    ensemble_RZ(i,:) = tx_column;
+end
