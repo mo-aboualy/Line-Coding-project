@@ -77,3 +77,7 @@ xlabel('Time (ms)'); ylabel('Amplitude');
 ylim([-5 5]); grid on;
 
 sgtitle('First 2 Waveforms for Each Line Code');
+%% ----------------------- COMPUTING STATISTICAL MEAN ---------------------
+plot_mean(ensemble_uni,"UniPolar Mean");
+plot_mean(ensemble_NRZ,"Polar Non Return To Zero Mean");
+plot_mean(ensemble_RZ,"Polar Return To Zero Mean");
