@@ -3,34 +3,37 @@ clear;
 close all;
 %% --------------------------UNIPOLAR SIGNALING----------------------------
 a = 4;
-n = 100;
+n = 101;                                      % 101 bits (one extra for the shift)
 ensemble_uni = zeros(500,800);
 for i = 1 : 500
-data = randi([0,1],1,n);
-tx = a * data;
-tx_matrix = repmat(tx,8,1);
-tx_column = reshape(tx_matrix,800,1);
-ensemble_uni(i, :) = tx_column;
+    data = randi([0,1], 1, n);
+    tx = a * data;
+    tx_matrix = repmat(tx, 8, 1);
+    tx_column = reshape(tx_matrix, [], 1);    % 808 samples
+    shift = randi([0,7]);                     % random initial shift
+    ensemble_uni(i, :) = tx_column(shift+1 : shift+800);
 end
 %% ------------------------POLAR NON RETURN TO ZERO------------------------
 ensemble_NRZ = zeros(500,800);
 for i = 1 : 500
-data = randi([0,1],1,n);
-tx = (( 2 * data ) - 1) * a;
-tx_matrix = repmat(tx,8,1);
-tx_column = reshape(tx_matrix,800,1);
-ensemble_NRZ(i, :) = tx_column;
+    data = randi([0,1], 1, n);
+    tx = ((2 * data) - 1) * a;
+    tx_matrix = repmat(tx, 8, 1);
+    tx_column = reshape(tx_matrix, [], 1);
+    shift = randi([0,7]);
+    ensemble_NRZ(i, :) = tx_column(shift+1 : shift+800);
 end
 %% ---------------------------RETURN TO ZERO-------------------------------
 ensemble_RZ = zeros(500,800);
 for i = 1:500
-    data = randi([0,1],1,n);
+    data = randi([0,1], 1, n);
     tx = ((2 * data) - 1) * a;
-    first_half = repmat(tx, 4, 1);
+    first_half  = repmat(tx, 4, 1);
     second_half = zeros(4, n);
-    tx_matrix = [first_half ; second_half];
-    tx_column = reshape(tx_matrix, 800, 1);
-    ensemble_RZ(i,:) = tx_column;
+    tx_matrix   = [first_half ; second_half];
+    tx_column   = reshape(tx_matrix, [], 1);
+    shift = randi([0,7]);
+    ensemble_RZ(i,:) = tx_column(shift+1 : shift+800);
 end
 %% ------------------------PLOTTING FIRST 2 WAVEFORMS------------------------
 t = 0:10:799*10;  % time axis in ms (800 samples, each 10ms apart)
