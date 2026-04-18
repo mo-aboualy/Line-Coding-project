@@ -91,4 +91,4 @@ plot_autocorrelation(ensemble_RZ,"Polar Return To Zero Mean");
 %% ----------------------- COMPUTING TIME MEAN AND TIME AUTOCORRELATION OF ONE WAVEFORM ---------------------
 Mean_autocorrelation_OneWaveform(ensemble_uni,"UniPolar Mean");
 Mean_autocorrelation_OneWaveform(ensemble_NRZ,"Polar Non Return To Zero Mean");
-Mean_autocorrelation_OneWaveform(ensemble_RZ,"Polar Return To Zero Mean");
+plot_Mean_autocorrelation_OneWaveform(ensemble_RZ,"Polar Return To Zero Mean");
