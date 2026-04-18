@@ -84,3 +84,7 @@ sgtitle('First 2 Waveforms for Each Line Code');
 plot_mean(ensemble_uni,"UniPolar Mean");
 plot_mean(ensemble_NRZ,"Polar Non Return To Zero Mean");
 plot_mean(ensemble_RZ,"Polar Return To Zero Mean");
+%% ----------------------- COMPUTING STATISTICAL AUTOCORRELATION ---------------------
+plot_autocorrelation(ensemble_uni,"UniPolar Mean");
+plot_autocorrelation(ensemble_NRZ,"Polar Non Return To Zero Mean");
+plot_autocorrelation(ensemble_RZ,"Polar Return To Zero Mean");
