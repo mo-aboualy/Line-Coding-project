@@ -92,3 +92,7 @@ plot_autocorrelation(ensemble_RZ,"Polar Return To Zero Mean");
 Mean_autocorrelation_OneWaveform(ensemble_uni,"UniPolar Mean");
 Mean_autocorrelation_OneWaveform(ensemble_NRZ,"Polar Non Return To Zero Mean");
 Mean_autocorrelation_OneWaveform(ensemble_RZ,"Polar Return To Zero Mean");
+%% ----------------------- CHECK_ERGODICITY ---------------------
+check_ergodicity(ensemble_uni,"UniPolar Mean");
+check_ergodicity(ensemble_NRZ,"Polar Non Return To Zero Mean");
+check_ergodicity(ensemble_RZ,"Polar Return To Zero Mean");
