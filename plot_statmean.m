@@ -1,4 +1,4 @@
-function plot_mean(ensemble, title_name)
+function plot_statmean(ensemble, title_name)
     statistical_mean = mean(ensemble, 1);   
     t = 0:10:799*10; 
     figure

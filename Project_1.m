@@ -40,17 +40,21 @@ plot_waveform(ensemble_uni, 'Unipolar',   'b', [-1  5]);
 plot_waveform(ensemble_NRZ, 'Polar NRZ',  'r', [-5  5]);
 plot_waveform(ensemble_RZ,  'Return to Zero', 'g', [-5  5]);
 %% ----------------------- COMPUTING STATISTICAL MEAN ---------------------
-plot_mean(ensemble_uni,"UniPolar Statistical Mean");
-plot_mean(ensemble_NRZ,"Polar Non Return To Zero Statistical Mean");
-plot_mean(ensemble_RZ,"Polar Return To Zero Statistical Mean");
+plot_statmean(ensemble_uni,"UniPolar Statistical Mean");
+plot_statmean(ensemble_NRZ,"Polar Non Return To Zero Statistical Mean");
+plot_statmean(ensemble_RZ,"Polar Return To Zero Statistical Mean");
+%% ----------------------- COMPUTING TIME MEAN ---------------------
+plot_timemean(ensemble_uni, "UniPolar Time Mean");
+plot_timemean(ensemble_NRZ, "Polar Non Return To Zero Time Mean");
+plot_timemean(ensemble_RZ, "Polar Return To Zero Time Mean");
 %% ----------------------- COMPUTING STATISTICAL AUTOCORRELATION ---------------------
-plot_autocorrelation(ensemble_uni,"UniPolar AUTOCORRELATION");
-plot_autocorrelation(ensemble_NRZ,"Polar Non Return To Zero AUTOCORRELATION");
-plot_autocorrelation(ensemble_RZ,"Polar Return To Zero AUTOCORRELATION");
-%% ----------------------- COMPUTING TIME MEAN AND TIME AUTOCORRELATION OF ONE WAVEFORM ---------------------
-Mean_autocorrelation_OneWaveform(ensemble_uni,"UniPolar Time AutoCorrelation ");
-Mean_autocorrelation_OneWaveform(ensemble_NRZ,"Polar Non Return To Zero Time AutoCorrelation ");
-Mean_autocorrelation_OneWaveform(ensemble_RZ,"Polar Return To Zero Time AutoCorrelation ");
+plot_stat_autocorrelation(ensemble_uni,"UniPolar AUTOCORRELATION ( R_x(\tau) )",true);
+plot_stat_autocorrelation(ensemble_NRZ,"Polar Non Return To Zero AUTOCORRELATION ( R_x(\tau) )",true);
+plot_stat_autocorrelation(ensemble_RZ,"Polar Return To Zero AUTOCORRELATION ( R_x(\tau) )",true);
+%% ----------------------- COMPUTING TIME AUTOCORRELATION OF ONE WAVEFORM ---------------------
+plot_time_autocorrelation(ensemble_uni,"UniPolar Time AutoCorrelation ");
+plot_time_autocorrelation(ensemble_NRZ,"Polar Non Return To Zero Time AutoCorrelation ");
+plot_time_autocorrelation(ensemble_RZ,"Polar Return To Zero Time AutoCorrelation ");
 %% ----------------------- PSD ---------------------
 PSD(ensemble_uni,"UniPolar");
 PSD(ensemble_NRZ,"Polar Non Return To Zero ");

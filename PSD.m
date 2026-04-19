@@ -4,7 +4,7 @@ function PSD_result = PSD(ensemble, title_name)
     Tb = 8 * Ts;
 
     %% --- Get autocorrelation from previous function ---
-    Rx_ensemble = plot_autocorrelation(ensemble, sprintf('%s — R_x(\\tau)', title_name));
+    Rx_ensemble = plot_stat_autocorrelation(ensemble, sprintf('%s — R_x(\\tau)', title_name),false);
 
     %% --- PSD via Wiener–Khinchin ---
     Nfft = 2^nextpow2(length(Rx_ensemble));

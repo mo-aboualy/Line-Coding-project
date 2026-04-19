@@ -1,8 +1,7 @@
-function Mean_autocorrelation_OneWaveform(ensemble, title_name)
+function plot_time_autocorrelation(ensemble, title_name)
     Ts = 10e-3;
     Waveform  = ensemble(1, :);                  % pick the 1st realization
-    time_mean = mean(Waveform);
-
+  
     % xcorr with 'unbiased' gives an estimate of the time autocorrelation
     [Rx_time, lag_samples] = xcorr(Waveform, 'unbiased');
 
@@ -12,6 +11,4 @@ function Mean_autocorrelation_OneWaveform(ensemble, title_name)
     xlabel('\tau (s)');
     ylabel('< x(t) . x(t + \tau) >');
     grid on;
-
-    fprintf('%s — Time mean of one waveform: %.4f\n', title_name, time_mean);
 end
