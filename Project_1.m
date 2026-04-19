@@ -85,14 +85,16 @@ plot_mean(ensemble_uni,"UniPolar Mean");
 plot_mean(ensemble_NRZ,"Polar Non Return To Zero Mean");
 plot_mean(ensemble_RZ,"Polar Return To Zero Mean");
 %% ----------------------- COMPUTING STATISTICAL AUTOCORRELATION ---------------------
-plot_autocorrelation(ensemble_uni,"UniPolar Mean");
-plot_autocorrelation(ensemble_NRZ,"Polar Non Return To Zero Mean");
-plot_autocorrelation(ensemble_RZ,"Polar Return To Zero Mean");
+plot_autocorrelation(ensemble_uni,"UniPolar AUTOCORRELATION");
+plot_autocorrelation(ensemble_NRZ,"Polar Non Return To Zero AUTOCORRELATION");
+plot_autocorrelation(ensemble_RZ,"Polar Return To Zero AUTOCORRELATION");
 %% ----------------------- COMPUTING TIME MEAN AND TIME AUTOCORRELATION OF ONE WAVEFORM ---------------------
-Mean_autocorrelation_OneWaveform(ensemble_uni,"UniPolar Mean");
-Mean_autocorrelation_OneWaveform(ensemble_NRZ,"Polar Non Return To Zero Mean");
-Mean_autocorrelation_OneWaveform(ensemble_RZ,"Polar Return To Zero Mean");
-%% ----------------------- CHECK_ERGODICITY ---------------------
-check_ergodicity(ensemble_uni,"UniPolar Mean");
-check_ergodicity(ensemble_NRZ,"Polar Non Return To Zero Mean");
-check_ergodicity(ensemble_RZ,"Polar Return To Zero Mean");
+Mean_autocorrelation_OneWaveform(ensemble_uni,"UniPolar ");
+Mean_autocorrelation_OneWaveform(ensemble_NRZ,"Polar Non Return To Zero ");
+Mean_autocorrelation_OneWaveform(ensemble_RZ,"Polar Return To Zero ");
+
+%% ----------------------- PSD ---------------------
+PSD(ensemble_uni,"UniPolar");
+PSD(ensemble_NRZ,"Polar Non Return To Zero ");
+PSD(ensemble_RZ,"Polar Return To Zero ");
+

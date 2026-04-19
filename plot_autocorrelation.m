@@ -1,4 +1,4 @@
-function plot_autocorrelation(ensemble, title_name)
+function Rx_ensemble = plot_autocorrelation(ensemble, title_name)
 Ts = 10e-3;                               % sample period = 10 ms
 Number_of_Samples = size(ensemble, 2);    % 800 time samples
 t1 = Number_of_Samples / 2;               % fix t1 at the middle (scalar)
