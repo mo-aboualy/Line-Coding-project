@@ -18,5 +18,3 @@ ylabel('R_x(\tau)');
 grid on;
 end
 end
-
-

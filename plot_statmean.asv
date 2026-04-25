@@ -1,5 +1,5 @@
 function plot_statmean(ensemble, title_name)
-    [num_realizations, ~] = size(ensemble);
+    [num_realizations, num_samples] = size(ensemble);
     
     statistical_mean = sum(ensemble, 1) / num_realizations;
     
