@@ -12,12 +12,15 @@ function Rx_ensemble = plot_stat_autocorrelation(ensemble, title_name, plotflag)
    
     for k = 1:length(tau)
         t2 = t1 + tau(k);
+        
+        % Multiply the signal values at t1 and t2 across EVERY realization at once
         product = ensemble(:, t1) .* ensemble(:, t2);
-        Rx_ensemble(k) = sum(product) / num_realizations;  % Average the products to get the statistical autocorrelation for this specific tau
+        
+        % Average the products to get the statistical autocorrelation for this specific lag
+        Rx_ensemble(k) = sum(product) / num_realizations;
     end
     
-    % Generate the plot only if the plotflag is true which happens in the
-    % main code only
+    % Generate the plot only if the user turned the plotflag on
     if plotflag
         figure;
         plot(tau * Ts, Rx_ensemble, 'LineWidth', 1.3);

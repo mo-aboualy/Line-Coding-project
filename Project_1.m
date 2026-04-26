@@ -4,7 +4,7 @@ close all;
 %% --------------------------UNIPOLAR SIGNALING----------------------------
 a = 4;
 n = 101;                                      % 101 bits (one extra for the shift)
-ensemble_uni = zeros(500,800);
+ensemble_uni = zeros(500,800);                % pre-allocation for better runtime speed  
 for i = 1 : 500
     data = randi([0,1], 1, n);
     tx = a * data;

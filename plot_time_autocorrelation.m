@@ -9,8 +9,7 @@ function plot_time_autocorrelation(ensemble, title_name)
         x2 = waveform(1 + k : N    );
         Rx_pos(k + 1) = sum(x1 .* x2) / (N - k);
     end
-
-    % Build the two-sided autocorrelation using even symmetry
+    
     Rx_time     = [fliplr(Rx_pos(2:end)), Rx_pos];   % length 2N-1
     lag_samples = -(N-1) : (N-1);                    % matching lag axis
 
