@@ -11,4 +11,5 @@ function plot_statmean(ensemble, title_name)
     xlabel('Time (ms)');
     ylabel('Mean Amplitude');
     grid on;
+    
 end
